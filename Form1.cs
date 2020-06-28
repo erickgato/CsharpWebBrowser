@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Reflection;
 namespace CsharpWebView
 {
     public partial class Form1 : Form
@@ -18,27 +19,23 @@ namespace CsharpWebView
         {
             InitializeComponent();
         }
-        private void callBrowser(Panel Area, out ChromiumWebBrowser B)
+        private ChromiumWebBrowser callBrowser(Panel Area)
         {
-            CefSettings Configs = new CefSettings();
-            Cef.Initialize(Configs);
+            ChromiumWebBrowser B;
             URL.Text = "https://www.google.com";
             B = new ChromiumWebBrowser(URL.Text);
             Area.Controls.Add(Browser);
-            Browser.Dock = DockStyle.Fill;
-            Browser.BackColor = Color.Red;
-            Browser.AddressChanged += Chrome_Address_Changed;
+            B.Dock = DockStyle.Fill;
+            B.BackColor = Color.Red;
+            B.AddressChanged += Chrome_Address_Changed;
+            return B;
         }
         private void Form1_Load(object sender, EventArgs e)
         {
             CefSettings Configs = new CefSettings();
             Cef.Initialize(Configs);
-            URL.Text = "https://www.google.com";
-            Browser = new ChromiumWebBrowser(URL.Text);
-            this.PBrowser.Controls.Add(Browser);
-            Browser.Dock = DockStyle.Fill;
-            Browser.BackColor = Color.Red;
-            Browser.AddressChanged += Chrome_Address_Changed;
+            Browser = callBrowser(this.PBrowser);
+           
         }
         private void Chrome_Address_Changed(object sender, AddressChangedEventArgs e)
         {
@@ -84,6 +81,15 @@ namespace CsharpWebView
 
         private void Add_Click(object sender, EventArgs e)
         {
+            TabPage newtab = DefaltPage.Clone();
+            newtab.Controls.Add(this.Bback.Clone());
+            newtab.Controls.Add(this.BNext.Clone());
+            newtab.Controls.Add(this.BRef.Clone());
+            newtab.Controls.Add(this.URL.Clone());
+            Panel Area = this.PBrowser.Clone();
+            newtab.Controls.Add(Area);
+            ChromiumWebBrowser NewB = callBrowser(Area);
+            /*
             TabPage NewP = DefaltPage.Clone();
             NewP.Text = "New Page";
             foreach(Control C in DefaltPage.Controls)
@@ -94,7 +100,7 @@ namespace CsharpWebView
                 ObjClon.BackColor = Color.White;
                 NewP.Controls.Add(ObjClon);
             }
-
+            */
         }
     }
 }

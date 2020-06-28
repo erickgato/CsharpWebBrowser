@@ -83,9 +83,9 @@
             // PBrowser
             // 
             this.PBrowser.BackColor = System.Drawing.Color.Transparent;
-            this.PBrowser.Location = new System.Drawing.Point(6, 45);
+            this.PBrowser.Location = new System.Drawing.Point(1, 45);
             this.PBrowser.Name = "PBrowser";
-            this.PBrowser.Size = new System.Drawing.Size(1065, 361);
+            this.PBrowser.Size = new System.Drawing.Size(1070, 342);
             this.PBrowser.TabIndex = 6;
             // 
             // Navigation
