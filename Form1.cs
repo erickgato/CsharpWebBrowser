@@ -18,15 +18,26 @@ namespace CsharpWebView
         {
             InitializeComponent();
         }
+        private void callBrowser(Panel Area, out ChromiumWebBrowser B)
+        {
+            CefSettings Configs = new CefSettings();
+            Cef.Initialize(Configs);
+            URL.Text = "https://www.google.com";
+            B = new ChromiumWebBrowser(URL.Text);
+            Area.Controls.Add(Browser);
+            Browser.Dock = DockStyle.Fill;
+            Browser.BackColor = Color.Red;
+            Browser.AddressChanged += Chrome_Address_Changed;
+        }
         private void Form1_Load(object sender, EventArgs e)
         {
-            Application.EnableVisualStyles();
             CefSettings Configs = new CefSettings();
             Cef.Initialize(Configs);
             URL.Text = "https://www.google.com";
             Browser = new ChromiumWebBrowser(URL.Text);
             this.PBrowser.Controls.Add(Browser);
             Browser.Dock = DockStyle.Fill;
+            Browser.BackColor = Color.Red;
             Browser.AddressChanged += Chrome_Address_Changed;
         }
         private void Chrome_Address_Changed(object sender, AddressChangedEventArgs e)
@@ -46,11 +57,6 @@ namespace CsharpWebView
             {
                 Browser.Load(URL.Text);
             }
-        }
-
-        private void Browser_DocumentCompleted_1(object sender, WebBrowserDocumentCompletedEventArgs e)
-        {
-            
         }
 
         private void Bback_Click(object sender, EventArgs e)
@@ -74,6 +80,21 @@ namespace CsharpWebView
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
             Cef.Shutdown();
+        }
+
+        private void Add_Click(object sender, EventArgs e)
+        {
+            TabPage NewP = DefaltPage.Clone();
+            NewP.Text = "New Page";
+            foreach(Control C in DefaltPage.Controls)
+            {
+                Control ObjClon = C.Clone();
+                ObjClon.Size = C.Size;
+                ObjClon.Anchor = C.Anchor;
+                ObjClon.BackColor = Color.White;
+                NewP.Controls.Add(ObjClon);
+            }
+
         }
     }
 }

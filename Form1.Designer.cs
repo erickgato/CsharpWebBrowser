@@ -33,11 +33,11 @@
             this.URL = new System.Windows.Forms.TextBox();
             this.BRef = new System.Windows.Forms.Button();
             this.PBrowser = new System.Windows.Forms.Panel();
-            this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.tabControl1.SuspendLayout();
-            this.tabPage1.SuspendLayout();
+            this.Navigation = new System.Windows.Forms.TabControl();
+            this.DefaltPage = new System.Windows.Forms.TabPage();
+            this.Add = new System.Windows.Forms.Button();
+            this.Navigation.SuspendLayout();
+            this.DefaltPage.SuspendLayout();
             this.SuspendLayout();
             // 
             // Bback
@@ -88,40 +88,41 @@
             this.PBrowser.Size = new System.Drawing.Size(1065, 361);
             this.PBrowser.TabIndex = 6;
             // 
-            // tabControl1
+            // Navigation
             // 
-            this.tabControl1.Controls.Add(this.tabPage1);
-            this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Location = new System.Drawing.Point(5, 3);
-            this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1085, 438);
-            this.tabControl1.TabIndex = 7;
+            this.Navigation.Controls.Add(this.DefaltPage);
+            this.Navigation.Location = new System.Drawing.Point(0, 23);
+            this.Navigation.Name = "Navigation";
+            this.Navigation.SelectedIndex = 0;
+            this.Navigation.Size = new System.Drawing.Size(1090, 411);
+            this.Navigation.TabIndex = 7;
             // 
-            // tabPage1
+            // DefaltPage
             // 
-            this.tabPage1.BackColor = System.Drawing.Color.AntiqueWhite;
-            this.tabPage1.Controls.Add(this.PBrowser);
-            this.tabPage1.Controls.Add(this.URL);
-            this.tabPage1.Controls.Add(this.BRef);
-            this.tabPage1.Controls.Add(this.Bback);
-            this.tabPage1.Controls.Add(this.BNext);
-            this.tabPage1.Location = new System.Drawing.Point(4, 22);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1077, 412);
-            this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "tabPage1";
+            this.DefaltPage.BackColor = System.Drawing.Color.Beige;
+            this.DefaltPage.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.DefaltPage.Controls.Add(this.PBrowser);
+            this.DefaltPage.Controls.Add(this.URL);
+            this.DefaltPage.Controls.Add(this.BRef);
+            this.DefaltPage.Controls.Add(this.Bback);
+            this.DefaltPage.Controls.Add(this.BNext);
+            this.DefaltPage.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DefaltPage.Location = new System.Drawing.Point(4, 22);
+            this.DefaltPage.Name = "DefaltPage";
+            this.DefaltPage.Padding = new System.Windows.Forms.Padding(3);
+            this.DefaltPage.Size = new System.Drawing.Size(1082, 385);
+            this.DefaltPage.TabIndex = 0;
+            this.DefaltPage.Text = "Home";
             // 
-            // tabPage2
+            // Add
             // 
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(192, 74);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "tabPage2";
-            this.tabPage2.UseVisualStyleBackColor = true;
+            this.Add.Location = new System.Drawing.Point(95, 3);
+            this.Add.Name = "Add";
+            this.Add.Size = new System.Drawing.Size(75, 23);
+            this.Add.TabIndex = 8;
+            this.Add.Text = "+";
+            this.Add.UseVisualStyleBackColor = true;
+            this.Add.Click += new System.EventHandler(this.Add_Click);
             // 
             // Form1
             // 
@@ -129,15 +130,16 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ClientSize = new System.Drawing.Size(1092, 443);
-            this.Controls.Add(this.tabControl1);
+            this.Controls.Add(this.Add);
+            this.Controls.Add(this.Navigation);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "Form1";
             this.Text = "Erick Browser";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
             this.Load += new System.EventHandler(this.Form1_Load);
-            this.tabControl1.ResumeLayout(false);
-            this.tabPage1.ResumeLayout(false);
-            this.tabPage1.PerformLayout();
+            this.Navigation.ResumeLayout(false);
+            this.DefaltPage.ResumeLayout(false);
+            this.DefaltPage.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -149,9 +151,9 @@
         private System.Windows.Forms.TextBox URL;
         private System.Windows.Forms.Button BRef;
         private System.Windows.Forms.Panel PBrowser;
-        private System.Windows.Forms.TabControl tabControl1;
-        private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.TabControl Navigation;
+        private System.Windows.Forms.TabPage DefaltPage;
+        private System.Windows.Forms.Button Add;
     }
 }
 
