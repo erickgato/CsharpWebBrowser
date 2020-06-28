@@ -1,0 +1,10 @@
+C:\Users\Maria\Respos\CsharpWebView\bin\Debug\CsharpWebView.exe.config
+C:\Users\Maria\Respos\CsharpWebView\bin\Debug\CsharpWebView.exe
+C:\Users\Maria\Respos\CsharpWebView\bin\Debug\CsharpWebView.pdb
+C:\Users\Maria\Respos\CsharpWebView\obj\Debug\CsharpWebView.csprojAssemblyReference.cache
+C:\Users\Maria\Respos\CsharpWebView\obj\Debug\CsharpWebView.Form1.resources
+C:\Users\Maria\Respos\CsharpWebView\obj\Debug\CsharpWebView.Properties.Resources.resources
+C:\Users\Maria\Respos\CsharpWebView\obj\Debug\CsharpWebView.csproj.GenerateResource.cache
+C:\Users\Maria\Respos\CsharpWebView\obj\Debug\CsharpWebView.csproj.CoreCompileInputs.cache
+C:\Users\Maria\Respos\CsharpWebView\obj\Debug\CsharpWebView.exe
+C:\Users\Maria\Respos\CsharpWebView\obj\Debug\CsharpWebView.pdb
